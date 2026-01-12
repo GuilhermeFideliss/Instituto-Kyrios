@@ -1,0 +1,121 @@
+<html lang="pt-BR">
+   <link rel="icon" href="banner.jpg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>Instituto Kyrios</title>
+<link rel="stylesheet" href="styless.css">
+<section class="segmentos">
+
+  <h2 class="titulo-secao">Nossos Segmentos</h2>
+
+  <div class="carrossel-container">
+
+    <div class="carrossel">
+
+      <div class="slide ativo">
+        <span class="icone">📚</span>
+        <h3>Educação Infantil</h3>
+        <p>Aprender brincando, respeitando o tempo e o desenvolvimento de cada criança.</p>
+      </div>
+
+      <div class="slide">
+        <span class="icone">🎨</span>
+        <h3>Atividades Criativas</h3>
+        <p>Estimulação da imaginação, coordenação motora e expressão artística.</p>
+      </div>
+
+      <div class="slide">
+        <span class="icone">💛</span>
+        <h3>Afetividade</h3>
+        <p>Ambiente acolhedor, com vínculos, respeito e segurança emocional.</p>
+      </div>
+
+      <div class="slide">
+        <span class="icone">🧠</span>
+        <h3>Desenvolvimento Integral</h3>
+        <p>Trabalhamos corpo, mente e emoções de forma equilibrada.</p>
+      </div>
+
+    </div>
+
+    <div class="controles">
+      <span class="dot ativo"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  </div>
+</section>
+<section class="etapas">
+
+  <h2>Etapas de Ensino</h2>
+
+  <div class="etapas-grid">
+
+    <div class="etapa">
+      <h3>Educação Infantil</h3>
+      <p>
+        Fase essencial para o desenvolvimento emocional, social e cognitivo,
+        respeitando o ritmo de cada criança.
+      </p>
+    </div>
+
+    <div class="etapa">
+      <h3>Alfabetização</h3>
+      <p>
+        Processo de construção da leitura e escrita de forma leve,
+        significativa e prazerosa.
+      </p>
+    </div>
+
+    <div class="etapa">
+      <h3>Desenvolvimento Socioemocional</h3>
+      <p>
+        Trabalhamos valores como empatia, autonomia, respeito e convivência.
+      </p>
+    </div>
+
+  </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+
+  // Se não existir slide, não roda nada
+  if (slides.length === 0) return;
+
+  let index = 0;
+
+  function atualizarSlide() {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("ativo", i === index);
+
+      if (dots[i]) {
+        dots[i].classList.toggle("ativo", i === index);
+      }
+    });
+  }
+
+  function proximoSlide() {
+    index = (index + 1) % slides.length;
+    atualizarSlide();
+  }
+
+  // inicia corretamente
+  atualizarSlide();
+
+  // troca automática
+  setInterval(proximoSlide, 5000);
+
+  // clique manual (se existir)
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      index = i;
+      atualizarSlide();
+    });
+  });
+
+});
+</script>

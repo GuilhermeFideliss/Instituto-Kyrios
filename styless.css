@@ -1,0 +1,179 @@
+.segmentos {
+  background: #d8cc7c;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.titulo-secao {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #2d2d2d;
+}
+
+.carrossel-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carrossel {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  background: #cbb61f;
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+
+.slide.ativo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.icone {
+  font-size: 50px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.slide h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.slide p {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.controles {
+  margin-top: 20px;
+}
+
+.dot {
+  height: 14px;
+  width: 14px;
+  margin: 0 5px;
+  display: inline-block;
+  background-color: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.ativo {
+  background-color: #333;
+}
+.proposta {
+  background: #e1d98b;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.proposta h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.proposta p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.valores {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.valor span {
+  font-size: 40px;
+}
+
+.valor h4 {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.etapas {
+  background: #f6f2c8;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.etapas h2 {
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+.etapas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.etapa {
+  background: #fff4b0;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+  /* ANIMAÇÃO AO PASSAR O MOUSE */
+.etapa {
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.etapa:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Animação suave do ícone */
+.etapa span {
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.etapa:hover span {
+  transform: scale(1.2) rotate(3deg);
+}
+
+/* Brilho sutil ao passar o mouse */
+.etapa::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.35), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.etapa:hover::after {
+  opacity: 1;
+}
+/* ESCONDE TODOS OS SLIDES */
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* MOSTRA APENAS O SLIDE ATIVO */
+.slide.ativo {
+  display: block;
+  opacity: 1;
+}
